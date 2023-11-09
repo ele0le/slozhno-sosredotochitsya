@@ -22,4 +22,30 @@
   display: none;
 }
 
+.theme_light .header__theme-menu-button_active {
+  border: 1px solid var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff1f7;
+  --accent-color: #FF8DCB;
+  --text-color: #353430;
+  --title-color: #FFc2E6;
+  --button-border-hover: 1px solid rgba(50,49, 45, 0.40);
+  --title-shadow: 4px 4px 0px #FF0070;
+  background-image: url(../images/cover-image-light.png);
+  }
+
+  .theme_light .header__mark {
+    display: none;
+  }
+  
+  .theme_light .header__theme-menu-button_active {
+    border: 1px solid var(--text-color);
+  }
+}
+
+
+
 

@@ -7,7 +7,7 @@
 --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 --title-color: #DB00FF;
 --title-shadow: 4px 4px 0px #FF0070;
---font-family: 'IBM Plex Mono';
+--font-family: 'IBM Plex Mono', monospace;
 --font-size: 18px;
 --font-weight: 400;
 --line-height: 130%;
