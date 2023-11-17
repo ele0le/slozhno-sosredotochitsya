@@ -44,6 +44,10 @@
   .theme_light .header__theme-menu-button_active {
     border: 1px solid var(--text-color);
   }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(50, 49, 45, 0.4);
+  }
 }
 
 
