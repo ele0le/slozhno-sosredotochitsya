@@ -9,7 +9,7 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --background-color: #00183f;
+  --background-color: #000028;
   --accent-color: #FF0070;
   --text-color-light: #F1B2CE;
   --title-color: #DB00FF;
@@ -19,7 +19,7 @@
 }
 
 .theme_dark .header__mark {
-  display: block;
+  display: flex;
 }
 
 .theme_dark .header__theme-menu-button_active {
@@ -31,3 +31,28 @@
   cursor: pointer;
 }
 
+@media (prefers-color-scheme: dark) {
+  .page {
+    --background-color: #000028;
+    --accent-color: #FF0070;
+    --text-color-light: #F1B2CE;
+    --title-color: #DB00FF;
+    --button-border-hover: 1px solid rgba(255, 0, 112, 0.40);
+    --title-shadow: 4px 4px 0px #FF0070;
+    background-image: url(../images/cover-image-dark.png);
+  }
+  
+  .theme_dark .header__mark {
+    display: flex;
+  }
+  
+  .theme_dark .header__theme-menu-button_active {
+    border: 1px solid var(--accent-color);
+  }
+  
+  .theme_dark .header__theme-menu-button:hover {
+    outline: 1px solid rgba(255, 0, 112, 0.4);
+    cursor: pointer;
+  }
+  
+}

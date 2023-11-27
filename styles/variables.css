@@ -4,7 +4,6 @@
 */
 :root {
 --accent-color: #FF0070;
---title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 --title-color: #DB00FF;
 --title-shadow: 4px 4px 0px #FF0070;
 --font-family: 'IBM Plex Mono', monospace;
@@ -12,9 +11,7 @@
 --font-weight: 400;
 --line-height: 130%;
 --font-weight-bold: 700;
---break-small: 10px;
---break-medium: 40px;
---break-large: 50px;
+--section-gap: 20px;
 --button-border-hover: 1px solid rgba(255, 0, 112, 0.40);
 --text-color-dark: #000028;
 --text-color-light: #F1B2CE;
@@ -22,11 +19,3 @@
 
 }
 
-@media (width >= 768px) {
-  :root {
-    --title-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --break-small: 20px;
-    --break-medium: 60px;
-    --break-large: 80px;
-  }
-}
