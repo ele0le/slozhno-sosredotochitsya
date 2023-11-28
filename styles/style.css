@@ -18,7 +18,7 @@
 
 .header {
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: 1fr min-content 1fr;
   position: relative;
   min-block-size: 668px;
   padding: 10px;
@@ -37,11 +37,10 @@
   align-items: center;
   column-gap: 10px;
   color: var(--accent-color, #FF0070);
-  inset-inline-end: 20px;
+  inset-inline-end: 40px;
   inset-block-start: 10px;
   line-height: 138.889%;
   text-transform: uppercase;
-  font: inherit;
   cursor: default;
 }
 
@@ -51,9 +50,34 @@
   display: block;
   background-color: var(--accent-color, #FF0070);
   filter: drop-shadow(0px 0px 4px var(--accent-color, #FF0070));
-  inline-size: 10px;
-  block-size: 10px;
+  inline-size: 9px;
+  block-size: 9px;
   border-radius: 50%;
+  inset-inline-end: 20px;
+  inset-block-start: 20px;
+}
+
+.decor::before,
+.decor::after {
+  content: "";
+  position: absolute;
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decor::before {
+  border-inline-end: 1px solid var(--accent-color, #FF0070);
+  border-block-start: 1px solid var(--accent-color, #FF0070);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decor::after {
+  border-inline-start: 1px solid var(--accent-color, #FF0070);
+  border-block-end: 1px solid var(--accent-color, #FF0070);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
 }
 
 .header__theme-menu {
@@ -108,29 +132,6 @@
   border-block-end: 1px solid currentColor;
 }
 
-.decor::before,
-.decor::after {
-  content: "";
-  position: absolute;
-  display: block;
-  inline-size: 25px;
-  block-size: 25px;
-}
-
-.decor::before {
-  border-inline-end: 1px solid var(--accent-color, #FF0070);
-  border-block-start: 1px solid var(--accent-color, #FF0070);
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
-}
-
-.decor::after {
-  border-inline-start: 1px solid var(--accent-color, #FF0070);
-  border-block-end: 1px solid var(--accent-color, #FF0070);
-  inset-inline-start: 10px;
-  inset-block-end: 10px;
-}
-
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--title-color, #DB00FF);
@@ -161,12 +162,15 @@
 }
 
 .section__title {
-  font: inherit;
   color: var(--accent-color, #FF0070);
   font-weight: var(--font-weight-bold, 700);
   min-inline-size: 236px;
+  inline-size: 100%;
+  font-size: var(--font-size, 18px);
+  line-height: var(--line-height, 130%);
 }
 
+.content-section,
 .section__content {
   display: flex;
   flex-direction: column;
@@ -215,9 +219,9 @@
 }
 
 .pictures {
+  display: grid;
   inline-size: 100%;
   gap: 10px;
-  display: grid;
 }
 
 .section__picture {
@@ -225,6 +229,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-position: center;
+  object-fit: cover;
 }
 
 .footer {
