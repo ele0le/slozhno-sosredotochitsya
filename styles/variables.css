@@ -6,6 +6,7 @@
 --accent-color: #FF0070;
 --title-color: #DB00FF;
 --title-shadow: 4px 4px 0px #FF0070;
+--menu-text-color: #ff0070;
 --font-family: 'IBM Plex Mono', monospace;
 --font-size: 18px;
 --font-weight: 400;
@@ -14,8 +15,7 @@
 --section-gap: 20px;
 --button-border-hover: 1px solid rgba(255, 0, 112, 0.40);
 --text-color-dark: #000028;
---text-color-light: #F1B2CE;
+--text-color-primary: #F1B2CE;
 --background-color: #000028;
-
 }
 
