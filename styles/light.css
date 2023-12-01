@@ -21,11 +21,7 @@
   background-image: url(../images/cover-image-light.png);
 }
 
-.theme_light .header__mark {
-  display: none;
-}
-
-.theme_light .header__mark {
+.page.theme_light .header__mark {
   display: none;
 }
 
@@ -39,6 +35,10 @@
 
 .theme_light .header__theme-menu-button_active {
   border: 1px solid var(--text-color);
+}
+
+.footer__title {
+  text-shadow: 2px 2px #Ff8dcb;
 }
 
 @media (1024px <= width) {
@@ -65,7 +65,7 @@
   --text-color-dark: #353430;
   --title-color: #FFc2E6;
   --button-border-hover: 1px solid rgba(50,49, 45, 0.40);
-  --title-shadow: 4px 4px 0px #FF0070;
+  --title-shadow: 4px 4px 0px #Ff8dcb;
   background-image: url(../images/cover-image-light.png);
   }
 
