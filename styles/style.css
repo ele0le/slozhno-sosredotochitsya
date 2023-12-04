@@ -2,9 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
   background-color: var(--background-color, #000028);
   background-image: url(../images/cover-image-dark.png);
   background-repeat: no-repeat;
@@ -14,6 +11,9 @@
   font-family: var(--font-family, monospace);
   font-size: var(--font-size, 18px);
   font-weight: var(--font-weight, 400);
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
 .header {
@@ -163,7 +163,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 10px;
-  row-gap: 40px;
+  row-gap: 50px;
 }
 
 .section__title {
@@ -179,7 +179,7 @@
 .section__content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .section__subtitle-bold {
@@ -255,29 +255,29 @@
   line-height: 82.5%;
 }
 
-@media (width >= 768px) {
-  .page {
-    row-gap: 60px;
-  }
-  
+@media (width <= 768px) {
   .decor::before {
     inset-inline-end: 20px;
     inset-block-start: 20px;
   }
-
+  
   .decor::after {
     inset-inline-start: 20px;
     inset-block-end: 20px;
   }
 
+  .header__mark {
+    inset-block-start: 20px;
+    inset-inline-end: 18px;
+  }
+  
+  .page {
+    row-gap: 60px;
+  }
+  
   .header {
     min-block-size: 1024px;
     padding: 20px;
-  }
-  
-  .header__mark {
-    inset-block-start: 20px;
-    inset-inline-end: 30px;
   }
 
   .header__title {
@@ -286,8 +286,9 @@
   }
   
   .header__text {
-    inline-size: 364px;
+    inline-size: 384px;
     justify-self: flex-end;
+    padding: 0;
   }
 
   .main {
@@ -303,6 +304,7 @@
   .why,
   .how {
     flex-direction: row;
+    gap: 10px;
   }
   
   .pictures {
@@ -349,8 +351,16 @@
 }
 
   @media (1024px <= width) {
+    .page {
+      row-gap: 60px;
+    }
+    
     .header {
       min-block-size: 768px;
+    }
+
+    .header__title {
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     }
 
     .header__theme-menu {
@@ -367,13 +377,18 @@
     }
 
     .why,
-    .how__to {
+    .how {
       gap: 10px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
     }
 
     .section__title {
-      min-inline-size: 315px;
       inline-size: 315px;
+    }
+
+    .main {
+      gap: 80px;
     }
 
     .what__details {
@@ -381,8 +396,44 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-
+    .pictures {
+      gap: 20px;
+      grid-template:
+      "title title title"
+      "image1 image1 image2"
+      "image3 image4 image2"
+      "image3 image5 image5"
+    }
+  
+    .pictures__grid {
+      grid-area: title;
+    }
+  
+    .section__picture:nth-child(2) {
+      grid-area: image1;
+    }
+  
+    .section__picture:nth-child(3) {
+      grid-area: image2;
+    }
+  
+    .section__picture:nth-child(4) {
+      grid-area: image3;
+    }
+  
+    .section__picture:nth-child(5) {
+      grid-area: image4;
+    }
+  
+    .section__picture:nth-child(6) {
+      grid-area: image5;
+    }
+  
     .footer {
       min-block-size: 768px;
+    }
+
+    .footer__title {
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     }
   }
