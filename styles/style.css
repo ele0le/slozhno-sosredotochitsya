@@ -255,7 +255,7 @@
   line-height: 82.5%;
 }
 
-@media (width <= 768px) {
+@media (width >= 768px) {
   .decor::before {
     inset-inline-end: 20px;
     inset-block-start: 20px;
@@ -350,7 +350,7 @@
   }
 }
 
-  @media (1024px <= width) {
+  @media (width >=1024px) {
     .page {
       row-gap: 60px;
     }
