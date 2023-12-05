@@ -20,11 +20,9 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
-  min-block-size: 668px;
   padding: 10px;
   block-size: 100vh;
   color: var(--menu-text-color, #ff0070);
-
 }
 
 @supports (block-size: 100dvb) {
@@ -39,7 +37,7 @@
   align-items: center;
   column-gap: 10px;
   color: var(--accent-color, #FF0070);
-  inset-inline-end: 38px;
+  inset-inline-end: 18px;
   inset-block-start: 10px;
   line-height: 138.889%;
   text-transform: uppercase;
@@ -126,11 +124,13 @@
 
 .header__theme-menu-button:focus-visible::after {
   content: "";
-  display: block;
-  inline-size: calc(100% + 20px);
+  position: absolute;
+  inline-size: 100%;
   block-size: 1px;
   background-color: currentColor;
   border-block-end: 1px solid currentColor;
+  inset-block-end: -2px;
+  inset-inline-start: 0;
 }
 
 .header__title {
@@ -153,8 +153,7 @@
 .header__text {
   align-self: center;
   font-weight: var(--font-weight-bold, 700);
-  max-block-size: 117px;
-  min-inline-size: 355px;
+  
   display: block;
   justify-self: flex-end;
 }
@@ -179,7 +178,7 @@
 .section__content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  row-gap: 20px;
 }
 
 .section__subtitle-bold {
@@ -268,7 +267,7 @@
 
   .header__mark {
     inset-block-start: 20px;
-    inset-inline-end: 18px;
+    inset-inline-end: 28px;
   }
   
   .page {
@@ -278,17 +277,18 @@
   .header {
     min-block-size: 1024px;
     padding: 20px;
+    
   }
 
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+
     margin-inline-start: -20px;
   }
   
   .header__text {
-    inline-size: 384px;
+    inline-size: 364px;
     justify-self: flex-end;
-    padding: 0;
   }
 
   .main {
@@ -298,13 +298,13 @@
 
   .section__title {
     inline-size: 236px;
-    min-inline-size: 236px;
+    
   }
 
   .why,
   .how {
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
   }
   
   .pictures {
@@ -350,7 +350,7 @@
   }
 }
 
-  @media (width >=1024px) {
+  @media (width >= 1024px) {
     .page {
       row-gap: 60px;
     }
@@ -394,6 +394,7 @@
     .what__details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
     }
 
     .pictures {
